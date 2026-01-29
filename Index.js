@@ -1,0 +1,13 @@
+const express = require('express');
+const app = express();
+
+app.get('/', (_req, res) => {
+  res.json({ ok: true, name: 'Roofing CRM API', hint: 'try /health' });
+});
+
+app.get('/health', (_req, res) => {
+  res.json({ status: 'ok' });
+});
+
+const port = process.env.PORT || 8080;
+app.listen(port, () => console.log(`API listening on ${port}`));
